@@ -1,0 +1,15 @@
+server:
+  port: 8761 # Default Eureka port
+
+spring:
+  application:
+    name: service-registry
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false # hadi bach my3tabre server 7ta howa client o yti7 f loop
+    fetchRegistry: false      # hadi bach ma ypull registry bih asln hada registry dyal all the services 
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
